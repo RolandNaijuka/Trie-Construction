@@ -1,20 +1,22 @@
 
 public class BinTree {
-	private int height =0;
-	//private int level = 0;
-	private int size =0;
+	private int height =0;		//height of the tree
+	private int size =0;		//number of elements stored on the tree
 	TrieNode<String> root;
-
+	
+	//constructor
 	public BinTree() {}
-
+	
+	//@return true or false if the element is inserted in the tree
 	public boolean insert(String str) {
 		int level = 0;
-		char[] c = str.toCharArray();
+		char[] c = str.toCharArray();	//creates an array of of characters of the bit string
 		int keyInsert;
 
-		keyInsert = Integer.parseInt(Character.toString(c[level]));
+		keyInsert = Integer.parseInt(Character.toString(c[level]));	//changes the character of the bitstring to integer
 
-
+		
+		//if the root is null, inserts left or right
 		if (root == null) {
 			root = new TrieNode<>();
 			if (keyInsert == 0)
@@ -26,9 +28,12 @@ public class BinTree {
 			return true;
 		} else if (root!=null){
 
-			TrieNode<String> current = root;
- 			if (keyInsert == 0) {
-
+			TrieNode<String> current = root;	//creates a current (which starts on the root) to iterate in the tree
+ 			
+			//move to the left or right if keyInsert is 0, or 1 respectively
+			if (keyInsert == 0) {
+				
+				//
 				while (current.element() == null && level < c.length) {
 					keyInsert = Integer.parseInt(Character.toString(c[level++]));
 
