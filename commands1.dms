@@ -1,0 +1,14 @@
+insert 0101010
+height
+insert 1001010
+insert 0001011
+size
+insert 1101000
+insert 0011111
+print
+search 1101000
+search 0011110
+smallest
+largest
+height
+size
